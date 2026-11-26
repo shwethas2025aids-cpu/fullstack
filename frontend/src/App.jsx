@@ -3,22 +3,30 @@ import Students from "./components/Students";
 import { Button } from "./components/ui/button";
 import Count from "./hooks/Count";
 import Register from "./hooks/Register";
+import Users from "./hooks/Users";
 
 const App = () => {
-  const name = "Shwetha";
+  const name = "test";
 
   return (
     <>
-      <div className="bg-blue-500 text-white p-4">App</div>
+      <div className="pl-24">App</div>
       <Register />
       <Count />
-      <Button variant="destructive">Delete</Button>
-      <Button variant="outline">Outline</Button>
-      <Button variant="secondary">Secondary</Button>
-      <Button variant="ghost">Ghost</Button>
-
-      <h1>Welcome {name}</h1>
-      <Students name="user" age={19} />
+      <div className="flex gap-2 p-4">
+        <Button variant="destructive">Delete</Button>
+        <Button variant="outline">outline</Button>
+        <Button variant="secondary">secondary</Button>
+        <Button variant="ghost">ghost</Button>
+      </div>
+      <div className="flex h-96 justify-around items-center bg-emerald-600 shadow">
+        <h3>1</h3>
+        <h3>2</h3>
+        <h3>3</h3>
+      </div>
+      <h1>This is {name}</h1>
+      <Users />
+      <Students name="user" age={20} />
     </>
   );
 };
