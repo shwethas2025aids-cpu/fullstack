@@ -1,29 +1,33 @@
-import {Button} from "../components/ui/button";
+import { Button } from "../components/ui/button";
 import { useState } from "react";
+
 const Count = () => {
-    const [count,setCount] = useState(0);
-    const[isElementVisible,setIsElementVisible]=useState(true);
+  const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+
   return (
     <div>
-        <h3> Count:{count}</h3>
-        <Button onClick={()=>setCount(count+1)}>Increase</Button>
-        <Button varient="destructive" onClick={()=>setCount(0)}>reset</Button>
+      <h3>Count: {count}</h3>
+      <Button onClick={() => setCount((prev) => prev + 1)}>Increase</Button>
+      <Button variant="destructive" onClick={() => setCount(0)}>
+        Reset
+      </Button>
 
       <br />
-        <Button onClick={()=>setIsVisible(!isVisible)}>Toggle</Button>
 
-        { isVisible && (
-          <p>
-            Lorom ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod. 
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod!
-          </p>
-          
-        )}
+      <Button onClick={() => setIsVisible((prev) => !prev)}>Toggle</Button>
 
+      {isVisible && (
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod!
+        </p>
+      )}
     </div>
-  )
-}
-export default Count
+  );
+};
+
+export default Count;
 
 
 
